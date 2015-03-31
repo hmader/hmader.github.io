@@ -7,6 +7,7 @@ body {
     margin: 0;
     padding: 0;
     font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -45,9 +46,28 @@ body {
 
 #data-breakdown {
  display: flex;
+    padding: 1em;
     flex-direction: column;
     width: 60%;
     background: #ffffff;
+}
+
+h2 {
+ font-family: 'PT Serif', serif; 
+    font-size: 1.5em;
+    font-weight: 700;
+    margin: 0 0 .5em 0;
+}
+
+i {
+    font-family: 'PT Serif', serif; 
+    font-weight: 400;
+    margin: 0;
+}
+
+h3 { 
+    font-weight: 600;
+    margin: 0;
 }
 
 #rep-photo {
