@@ -7,10 +7,40 @@ body {
     margin: 0;
     padding: 0;
     font-size: 16px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+#overlay {
+    position: fixed;
+    top: 100vh;
+    left: 0;
+ width: 100%;
+    height: 100vh;
+    background: #223CFF;
+    opacity: .7;
+    transition: 1s;
+    z-index: 3;
+}
+
+#show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 7em;
+    height: 4.5em;
+    background: #223CFF;
+    transition: 1s;
+    z-index: 5;
+}
+
+#show img {
+    width: 50%;
 }
 
 #fl-wrapper {
@@ -32,13 +62,19 @@ body {
     width: 100%;
 }
 
+#fl-base {
+ width: 100%;
+    position: relative;
+}
+
 #fl-districts {
     width: 100%;
 }
 
 #district-content {
-    background: #3E5964;
-    padding: 1em;
+    color: #3C4954;
+    min-height: 60vh;
+    padding: .2em;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -46,38 +82,54 @@ body {
 
 #data-breakdown {
  display: flex;
-    padding: 1em;
+    padding: 2em;
     flex-direction: column;
-    width: 60%;
-    background: #ffffff;
+    width: 80%;
+    background: #E8E8E8;
+
 }
 
 h2 {
- font-family: 'PT Serif', serif; 
     font-size: 1.5em;
-    font-weight: 700;
+    font-weight: 600;
     margin: 0 0 .5em 0;
 }
 
 i {
-    font-family: 'PT Serif', serif; 
     font-weight: 400;
     margin: 0;
 }
 
 h3 { 
     font-weight: 600;
+    font-size: 1em;
     margin: 0;
 }
 
 #rep-photo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
     min-width: 10em;
- max-width: 300px; 
-    background-color: #ffffff;
+ width: 20%; 
+    background: #E8E8E8;
+
+}
+
+#rep-photo img {
+ width: 100%;   
+    background: #fff;
+    padding: 1em;
+
 }
 
 .district-mod {
- margin: 1em;   
+ margin: .1em;   
+}
+
+#tweet {
+ padding: 1em;   
 }
 
 /* ==========================================================================

@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="js/jq-widgets/jquery-ui.min.css">
     <link rel="stylesheet" href="css/slider.css">
     <!-- Fonts -->
-<link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700|Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+    <!--<link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700|Open+Sans:400,600,700' rel='stylesheet' type='text/css'>-->
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
     <!-- -->
 
 </head>
@@ -20,22 +21,33 @@
 <body>
     <section id="fl-wrapper">
         <div class="fl-map">
-            <img id="fl-sea-level" src="assets/FL_1ft.svg" alt="Map of Florida"/>
+            <img id="fl-sea-level" class="svg" src="assets/FL_1ft.svg" alt="Map of Florida" />
         </div>
         <div class="fl-map">
-            <img id="fl-districts" src="assets/FL_1ft.svg" alt="Map of Florida with Districts"/>
+            <img id="fl-base" class="svg" src="assets/FL_1ft.svg" alt="Map of Florida" />
+            <img id="fl-districts" class="svg" src="assets/Districts.svg" alt="Map of Florida with Districts" />
         </div>
     </section>
     <div id="slider"></div>
-    
+
     <section id="district-content">
-    <img id="rep-photo" class="district-mod" src=" " alt="Profile" />
+        <div id="rep-photo" class="district-mod">
+            <img src="assets/images/portrait-3.jpg" alt="Profile" />
+            <div id="tweet">Tweet!</div>
+        </div>
         <section id="data-breakdown" class="district-mod">
             <h2 id="district-number">District 00 - Josey Doe</h2>
             <h3 id="district-counties">Miami-Dade, Broward</h3>
-            <p id="official-stance"><i>Lorem ipsum.....</i></p>
+            <p id="official-stance"><i>Lorem ipsum.....</i>
+            </p>
             <section id="stance-data"></section>
         </section>
+    </section>
+
+    <div id="show" onclick="show()">
+        <img src="assets/arrow.svg" alt="arrow" />
+    </div>
+    <section id="overlay">
     </section>
 
     <!-- <object id="fl" type = "image/svg+xml" data="assets/FL_1ft.svg">
@@ -48,6 +60,36 @@
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     <script src="js/jq-widgets/jquery-ui.js"></script>
     <script src="js/slider.js"></script>
+
+    <script>
+        var clicked = false;
+        var degree = 180;
+        
+        function show() {
+            
+            var command = "rotate(" + degree + "deg)"
+            
+            if (!clicked) {
+                $("#overlay").css("top", "0");
+            } else {
+                $("#overlay").css("top", "100vh");
+            }
+
+            $("#show > img").css({
+                "-webkit-transform": command,
+                "-moz-transform": command,
+                "-o-transform": command,
+                "-ms-transform": command,
+                "transform": command,
+                "transition": "1s"
+            });
+
+            clicked = !clicked;
+            degree = Math.abs(degree - 180);
+            console.log(degree);
+
+        }
+    </script>
 
 </body>
 

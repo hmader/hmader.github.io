@@ -27,7 +27,7 @@ div#slider {
 }
 
 .ui-slider-horizontal {
-	height: .4em;
+	height: .3em;
 }
 .ui-slider-horizontal .ui-slider-handle {
 	top: -.45em;
@@ -43,3 +43,5 @@ div#slider {
 .ui-slider-horizontal .ui-slider-range-max {
 	right: 0;
 }
+
+
