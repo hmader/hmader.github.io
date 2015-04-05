@@ -1,0 +1,39 @@
+svg path {
+    fill: #fff;
+    fill-opacity: .01;
+    stroke-opacity: 1;
+    transition: .25s;
+    stroke: #223CFF;
+    stroke-width: 0.5;
+}
+
+#District1_1_:hover,
+#District2_7_:hover,
+#District3_1_:hover,
+#District4_1_:hover,
+#District5_1_:hover,
+#District6_1_:hover,
+#District7_3_:hover,
+#District8_1_:hover,
+#District9_1_:hover,
+#District10_1_:hover,
+#District11_1_:hover,
+#District12_3_:hover,
+#District13_1_:hover,
+#District14_1_:hover,
+#District15_1_:hover,
+#District16_1_:hover,
+#District17_1_:hover,
+#District18_1_:hover,
+#District19_1_:hover,
+#District20_2_:hover,
+#District21_2_:hover,
+#District22_1_:hover,
+#District23_1_:hover,
+#District24_1_:hover,
+#District25_1_:hover,
+#District26_1_:hover,
+#District27_1_:hover {
+    fill: #223CFF;
+    fill-opacity: .5;
+}

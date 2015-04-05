@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="js/jq-widgets/jquery-ui.min.css">
     <link rel="stylesheet" href="css/slider.css">
+
     <!-- Fonts -->
     <!--<link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700|Open+Sans:400,600,700' rel='stylesheet' type='text/css'>-->
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
@@ -21,13 +22,24 @@
 <body>
     <section id="fl-wrapper">
         <div class="fl-map">
-            <img id="fl-sea-level" class="svg" src="assets/FL_1ft.svg" alt="Map of Florida" />
+            <div id="fl-base">
+                <img class="svg" src="assets/FL-base.svg" alt="Map of Florida" />
+            </div>
+            <div id="fl-districts">
+                <object class="svg" type="image/svg+xml" data="assets/Districts-1.svg">
+                </object>
+            </div>
+            <div id="fl-sea-level">
+                <img class="svg" src="assets/FL-base.svg" alt="Map of Florida" />
+            </div>
         </div>
-        <div class="fl-map">
+        <!-- <div class="fl-map">
             <img id="fl-base" class="svg" src="assets/FL_1ft.svg" alt="Map of Florida" />
-            <img id="fl-districts" class="svg" src="assets/Districts.svg" alt="Map of Florida with Districts" />
-        </div>
+         
+        </div>-->
     </section>
+
+    <div id="base-button"> </div>
     <div id="slider"></div>
 
     <section id="district-content">
@@ -64,11 +76,11 @@
     <script>
         var clicked = false;
         var degree = 180;
-        
+
         function show() {
-            
+
             var command = "rotate(" + degree + "deg)"
-            
+
             if (!clicked) {
                 $("#overlay").css("top", "0");
             } else {
