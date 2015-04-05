@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<!-- Note: Illustrator SVG dimens 400x400-->
 
 <head>
     <meta charset="utf-8">
@@ -21,22 +22,27 @@
 
 <body>
     <section id="fl-wrapper">
-        <div class="fl-map">
-            <div id="fl-base">
-                <img class="svg" src="assets/FL-base.svg" alt="Map of Florida" />
-            </div>
-            <div id="fl-districts">
+        <div id="SL" class="fl-map">
+          <!--  <div class="fl-districts">
                 <object class="svg" type="image/svg+xml" data="assets/Districts-1.svg">
                 </object>
-            </div>
+            </div> -->
             <div id="fl-sea-level">
                 <img class="svg" src="assets/FL-base.svg" alt="Map of Florida" />
             </div>
+            <div class="fl-base">
+                <img class="svg" src="assets/FL-base.svg" alt="Map of Florida" />
+            </div>
         </div>
-        <!-- <div class="fl-map">
-            <img id="fl-base" class="svg" src="assets/FL_1ft.svg" alt="Map of Florida" />
-         
-        </div>-->
+        <div class="fl-map">
+            <div class="fl-districts">
+                <object class="svg" type="image/svg+xml" data="assets/Districts-1.svg">
+                </object>
+            </div>
+            <div class="fl-base" id="base-only">
+                <img class="svg" src="assets/FL-base.svg" alt="Map of Florida" />
+            </div>
+        </div>
     </section>
 
     <div id="base-button"> </div>
