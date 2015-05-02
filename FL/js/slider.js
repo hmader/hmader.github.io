@@ -1,10 +1,11 @@
 var increments = 10;
+var max = 10;
 
 
 $("#slider").slider({
     orientation: "horizontal",
     min: 0,
-    max: 100,
+    max: max,
     change: switchSVG
 });
 
@@ -12,7 +13,7 @@ $("#slider").slider({
 
 function switchSVG(event, ui) {
     var level = $("#slider").slider("option", "value");
-    level = Math.round(level/increments);
+   // level = Math.round(level/increments);
     if (level == 0) {
         $("#fl-sea-level > img").attr("src", "assets/FL-base.svg");
     } else {
