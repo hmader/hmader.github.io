@@ -10,10 +10,16 @@ body {
     font-size: 16px;
     line-height: 1.5em;
     font-family: 'Lato', sans-serif;
+    font-weight: 300;
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100vw;
+}
+
+strong {
+ font-weight: 400;  
+    font-style: italic;
 }
 
 .column {
@@ -34,6 +40,17 @@ body {
  width: 100vw; 
     justify-content: flex-start;
     padding-left: 5em;
+}
+
+.issue-button {
+ position: fixed;
+    top: 1em;
+    right: 1em;
+    z-index: 5;
+}
+
+.issue-button img {
+ height: 50px;   
 }
 
 #overlay {
@@ -60,6 +77,27 @@ body {
     background: #223CFF;
     transition: 1s;
     z-index: 5;
+}
+
+#reps-list {
+display: -webkit-flex;
+   display: flex;
+   -webkit-align-items: center;
+   align-items: center;
+   -webkit-justify-content: center;
+   justify-content: center;
+   /* You can set flex-wrap and flex-direction individually */
+   -webkit-flex-direction: row;
+   flex-direction: row;
+   -webkit-flex-wrap: wrap;
+   flex-wrap: wrap;
+   /* Or do it all in one line with flex flow */
+   -webkit-flex-flow: row wrap;
+   flex-flow: row wrap;
+   /* tweak the where items line up on the row */
+   /* valid values are: flex-start, flex-end, space-between, space-around, stretch */
+   -webkit-align-content: flex-end;
+   align-content: flex-end;
 }
 
 #show img {
@@ -150,6 +188,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    position: relative;
 }
 
 #district-content {
@@ -182,6 +221,7 @@ body {
 #votes {
  width: 70%; 
     margin-top: 5%;
+    height: 3.5em;
 }
 
 .pos-vote {
@@ -206,13 +246,21 @@ ul {
 li {
     list-style: none;
          width: 7%;
+     opacity: .8;
+     transition: .5s;
     margin: .1em;
     height: 3em;
 }
 
+li:hover {
+     opacity: 1;
+    width: 8%;
+    height: 3.5em;
+}
+
 #legislation {
     margin: 2% 0;
-  width: 80%;
+  width: 90%;
 }
 
 #leg {
