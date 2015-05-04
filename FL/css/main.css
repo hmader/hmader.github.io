@@ -54,15 +54,23 @@ strong {
 }
 
 #overlay {
+    display: flex;
+    flex-direction: column;
     position: fixed;
     top: 100vh;
     left: 0;
     width: 100vw;
     height: 100vh;
     background: #223CFF;
-    opacity: .7;
+    opacity: .85;
     transition: 1s;
     z-index: 4;
+}
+
+#overlay div {
+    margin: 5% 10%;
+    color: #fff;
+    font-size: 16px;
 }
 
 #show {
@@ -111,7 +119,7 @@ display: -webkit-flex;
 
 #hovers {
     width: 100vw;
-    height: 75px;
+    height: 50px;
  align-items: flex-start;
 }
 
@@ -185,7 +193,7 @@ display: -webkit-flex;
 
 #district-wrapper {
     visibility: hidden;
-    display: flex;
+    display: none;
     flex-direction: column;
     min-height: 100vh;
     position: relative;
@@ -220,7 +228,7 @@ display: -webkit-flex;
 
 #votes {
  width: 70%; 
-    margin-top: 5%;
+    margin-top: 2%;
     height: 3.5em;
 }
 
@@ -229,7 +237,7 @@ display: -webkit-flex;
 }
 
 .neg-vote {
- background: #EC1C24;
+ background: #000;
 }
 
 .na-vote {
@@ -265,6 +273,8 @@ li:hover {
 
 #leg {
     visibility: hidden;
+    position: relative;
+    height: 25px;
     border-radius: 27px 27px 27px 27px;
 -moz-border-radius: 27px 27px 27px 27px;
 -webkit-border-radius: 27px 27px 27px 27px;
