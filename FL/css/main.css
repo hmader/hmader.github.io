@@ -195,6 +195,7 @@ display: -webkit-flex;
     visibility: hidden;
     display: none;
     flex-direction: column;
+    justify-content: center;
     min-height: 100vh;
     position: relative;
 }
@@ -205,14 +206,12 @@ display: -webkit-flex;
     background: #FFF;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 #data-breakdown {
     display: flex;
-    padding: 3em 3em 3em 0;
     flex-direction: column;
-    width: 70vw;
 }
 
 #stance-data {
@@ -297,12 +296,21 @@ border: 0px solid #000000;
  padding: 0 3em;
     min-width: 10em;
     max-width: 300px;
-    width: 30%;
     opacity: 1;
 }
 
 #rep-photo img {
     width: 100%;
+}
+
+#district-highlight {
+ min-width: 10em;
+    max-width: 300px;   
+}
+
+.district-mod {
+ width: 25%;
+    padding: 3em 3em 3em 0;
 }
 
 h2 {

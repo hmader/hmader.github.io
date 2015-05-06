@@ -891,6 +891,8 @@ $(".show").click(function() {
             var districtNum = $(this).attr("id");
             console.log(jQuery(this).attr('id'));
             var photoPath = "assets/images/" + districts[districtNum - 1].representative.photo;
+            var districtPhotoPath = "assets/images/d" + districtNum + ".png";
+            
             console.log(photoPath);
             
             
@@ -898,6 +900,7 @@ $(".show").click(function() {
             $("#district-rep").html(districts[districtNum - 1].representative.name + ", " + districts[districtNum - 1].title);
             $("#rep-photo > img").attr("src", photoPath);
             $("#district-counties").html(districts[districtNum - 1].counties + " Counties");
+            $("#district-highlight > img").attr("src", districtPhotoPath);
             
             
             var selectedHistory = districts[districtNum - 1].representative.votingHistory;
