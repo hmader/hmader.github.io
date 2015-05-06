@@ -14,7 +14,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100vw;
+    width: 100%;
 }
 
 strong {
@@ -37,9 +37,10 @@ strong {
 }
 
 .bits-wrapper {
- width: 100vw; 
+ width: 90vw; 
     justify-content: flex-start;
     padding-left: 5em;
+
 }
 
 .issue-button {
@@ -120,7 +121,7 @@ display: -webkit-flex;
 #hovers {
     width: 100vw;
     height: 50px;
- align-items: flex-start;
+    align-items: flex-start;
 }
 
 #hovers h3{
@@ -148,7 +149,7 @@ display: -webkit-flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    width: 100vw;
+    width: 90vw;
     height: 70vh;
     padding: 1em;
 }
@@ -366,7 +367,31 @@ h3 {
 @media only screen and (max-width: 600px) {}
 /* Intermediate */
 
-@media only screen and (max-width: 960px) {}
+@media only screen and (max-width: 960px) {
+#district-content {
+ flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+    .bits-wrapper {
+     padding: 1em 1em;   
+    }
+    .bar {
+     flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .district-mod {
+     width: 70%;
+        padding: 1em 2em;
+    }
+    
+    #map-section {
+        height: auto;
+     min-height: 100vh;   
+    }
+
+}
 /* Wide */
 
 @media only screen and (min-width: 1140px) {}
