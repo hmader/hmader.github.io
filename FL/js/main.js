@@ -989,7 +989,7 @@ $(".show").click(function() {
                     
                     for (var i = 0; i < legislation.length; i++) {
                  if (legislation[i].key == legislationNumber) {
-                    $("#leg").html("View information for: " +legislation[i].abbr);
+                    $("#leg").html("View summary for: " +legislation[i].abbr);
                  }
             }
                 });
