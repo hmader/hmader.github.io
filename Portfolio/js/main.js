@@ -27,7 +27,15 @@ var menubg = new Waypoint({
     handler: function (direction) {
         if (direction == 'down') {
             $(".home-button").css({
-                    'background-color': 'black',
+                    'background-color': '#282828',
+                    'transition': '1s'
+                }),
+                $(".contact-bubble").css({
+                    'fill': '#282828',
+                    'transition': '1s'
+                }),
+                $("circle").css({
+                    'fill': '#FFFFFF',
                     'transition': '1s'
                 }),
                 $("nav").css({
@@ -38,6 +46,14 @@ var menubg = new Waypoint({
             $(".home-button").css({
                     'background-color': 'transparent',
                     'transition': '.5s'
+                }),
+                $(".contact-bubble").css({
+                    'fill': '#FFFFFF',
+                    'transition': '1s'
+                }),
+                $("circle").css({
+                    'fill': '#FFFFFF',
+                    'transition': '1s'
                 }),
                 $("nav").css({
                     'background-color': 'transparent',
