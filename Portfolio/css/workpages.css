@@ -10,8 +10,8 @@ body {
 }
 
 h1 {
-    font-family: 'Gentium Basic', serif;
-    font-weight: 700;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
 }
 
 p {
@@ -19,17 +19,44 @@ p {
     font-weight: 400;
 }
 
+footer {
+ height: 3em;   
+}
+
 .down-arrow {
-    padding: 2em 0 6em;
-    height: 40px;
+    padding: 2em 0 1em;
+    height: 30px;
+}
+
+.myWrap {
+    width: 100%;
+    height: 85vh;
+    min-height: 500px;
 }
 
 .backstretch-div {
     width: 100%;
-    height: 85vh;
+    height: 100%;
+    position: relative;
+}
+
+.left-arrow {
+    position: absolute;
+    left: 1em;
+    top: 50%;
+    width: 30px;
+}
+
+.right-arrow {
+    position: absolute;
+    top: 50%;
+    right: 1em;
+    width: 30px;
 }
 
 .descriptors-container {
+    opacity: .3;
+    transition: .25s;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -37,6 +64,12 @@ p {
     width: 85%;
     max-width: 1200px;
     height: 70vh;
+    min-height: 500px;
+    margin-bottom: 1em;
+}
+
+.first {
+    margin-top: 5em;
 }
 
 .descriptors {
@@ -45,7 +78,10 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 1em;
+}
+
+.descriptors.text {
+ padding-top: 1em;   
 }
 
 .descriptors p,
@@ -62,6 +98,45 @@ div.img {
 }
 
 div img {
-    width: 100%;
+    max-height: 100%;
+    max-width: 100%;
     position: absolute;
+}
+
+nav {
+ width: 100%;
+    height: 4em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding-bottom: .25em;
+}
+
+.home-button {
+    font-family: 'Raleway', sans-serif;
+    padding: .5em 2em;
+    font-size: 18px;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+svg {
+ width: 35px;
+    padding: .5em 2.5em;
+    align-self: flex-end;
+}
+
+.contact-button {
+ fill: white;   
+}
+
+.button {
+    cursor: pointer;
 }
