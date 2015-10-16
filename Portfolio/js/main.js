@@ -118,6 +118,7 @@ var footerOffset = $(window).height();
 
 
 /*  down arrow position adjustments  */
+
 $(document).ready(function () {
     if ($(window).width() >= mobileScreen) {
         var arrow = new Waypoint({
