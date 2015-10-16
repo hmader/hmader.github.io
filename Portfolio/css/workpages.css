@@ -1,9 +1,16 @@
 body {
     box-sizing: border-box;
+    
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
+    -webkit-justify-content: flex-start;
+    -webkit-align-items: center;
+    
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    
     font-size: 14.5px;
     line-height: 1.5em;
     padding: 0;
@@ -32,10 +39,17 @@ p {
 footer {
     width: 100%;
     height: 300px;
+    
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
+    -webkit-justify-content: center;
+    -webkit-align-items: center;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
     background-color: #D70F42;
     color: #FAFAFA;
 }
@@ -70,6 +84,11 @@ a {
 div.cushion {
     width: 100%;
     height: 75px;
+    
+    display: -webkit-flex;
+    -webkit-justify-content: center;
+    -webkit-align-items: center;
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -107,10 +126,17 @@ div.cushion {
 .descriptors-container {
     opacity: .3;
     transition: .25s;
+    
+    display: -webkit-flex;
+    -webkit-flex-direction: row;
+    -webkit-justify-content: space-between;
+    -webkit-align-items: center;
+    
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    
     width: 85%;
     max-width: 1200px;
     height: 70vh;
@@ -125,6 +151,11 @@ div.cushion {
 .descriptors {
     width: 45%;
     height: 100%;
+    
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
+    -webkit-align-items: center;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -161,15 +192,32 @@ div img {
 nav {
     width: 100%;
     height: 4em;
+    
+    display: -webkit-flex;
+    -webkit-flex-direction: row;
+    -webkit-justify-content: space-between;
+    -webkit-align-items: flex-end;
+    
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
+    
     position: fixed;
     top: 0;
     left: 0;
     z-index: 10;
     padding-bottom: .25em;
+}
+
+.section {
+   font-family: 'Raleway', sans-serif;
+    padding: .5em 2em;
+    font-size: 15px;
+    text-align: center;
+    color: #282828;
+    text-transform: uppercase;
+    text-decoration: none; 
 }
 
 .home-button {
@@ -185,6 +233,9 @@ nav {
 svg.contact-bubble {
     width: 35px;
     padding: .5em 2.5em;
+    
+    -webkit-align-self: flex-end;
+    
     align-self: flex-end;
 }
 
@@ -210,10 +261,17 @@ svg.contact-bubble {
     height: auto;
     background-color: #D70F42;
     color: #FFFFFF;
+    
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
+    -webkit-justify-content: center;
+    -webkit-align-items: center;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
     text-align: center;
 }
 
@@ -232,6 +290,11 @@ svg.contact-bubble {
 }
 
 .show {
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
+    -webkit-justify-content: center;
+    -webkit-align-items: center;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -252,9 +315,14 @@ svg.contact-bubble {
         max-height: 80vh;
     }
     .descriptors-container {
+        -webkit-flex-direction: column;
+        -webkit-justify-content: center;
+        -webkit-align-items: center;
+        
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        
         height: auto;
     }
     .descriptors {

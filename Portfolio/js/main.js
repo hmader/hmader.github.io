@@ -1,23 +1,28 @@
+var mobileScreen = 760;
+var firstClick = false;
+
 $(document).ready(function () {
     $(this).scrollTop(0);
-    
+
     if ($(window).height() > $(window).width()) {
-     $(".myWrap").addClass("vertical");   
+        $(".myWrap").addClass("vertical");
+        $("div.img").addClass("vertical");
     }
 });
 
 /*======================================================================
       Arrow Buttons
     ======================================================================*/
-var firstClick = false;
 
 $(window).scroll(function () {
     if ($(window).scrollTop() >= $(".myWrap").height()) {
         //    console.log($(window).scrollTop());
         //    console.log(.5*$(".myWrap").height());
         //    console.log("in");
-        firstClick = true;
-        
+        if ($(window).width() >= mobileScreen) {
+            firstClick = true;
+        }
+
         $(".home-button").css({
                 'background-color': '#282828',
                 'transition': '1s'
@@ -56,19 +61,24 @@ $(window).scroll(function () {
 
 $("img.down-arrow").click(function () {
 
-    $(".down-arrow").css({
-        'position': 'fixed',
-        'left': '50%',
-        'bottom': '45',
-        'transform': 'translate(-50%, 0)'
-    });
+    if ($(window).width() >= mobileScreen) {
+        $(".down-arrow").css({
+            'position': 'fixed',
+            'left': '50%',
+            'bottom': '45',
+            'transform': 'translate(-50%, 0)'
+        });
+    }
+
 
     if (!firstClick) {
         $("html, body").animate({
             scrollTop: ($(".first").position().top)
         }, 1000);
         //console.log($(".first").position().top);
-        firstClick = true;
+        if ($(window).width() >= mobileScreen) {
+            firstClick = true;
+        }
     } else if (firstClick) {
         console.log($(window).scrollTop());
         $("html, body").animate({
@@ -106,24 +116,31 @@ $(".overlay-content>.button").click(function () {
 var arrowOffset = $(".myWrap").height() - .5 * $(".down-arrow").height();
 var footerOffset = $(window).height();
 
-var arrow = new Waypoint({
-    element: $(".down-arrow"),
-    handler: function (direction) {
-        if (direction == 'down') {
-            $(".down-arrow").css({
-                'position': 'fixed',
-                'left': '50%',
-                'bottom': '45',
-                'transform': 'translate(-50%, 0)'
-            });
-        } else {
-            $(".down-arrow").css({
-                'position': 'static',
-                'transform': 'translate(0, 0)'
-            })
-        }
-    },
-    offset: arrowOffset
+
+/*  down arrow position adjustments  */
+$(document).ready(function () {
+    if ($(window).width() >= mobileScreen) {
+        var arrow = new Waypoint({
+            element: $(".down-arrow"),
+            handler: function (direction) {
+                if (direction == 'down') {
+                    $(".down-arrow").css({
+                        'position': 'fixed',
+                        'left': '50%',
+                        'bottom': '45',
+                        'transform': 'translate(-50%, 0)'
+                    });
+                } else {
+                    $(".down-arrow").css({
+                        'position': 'static',
+                        'transform': 'translate(0, 0)'
+                    })
+                }
+            },
+            offset: arrowOffset
+        });
+    }
+
 });
 
 var hitFooter = new Waypoint({
