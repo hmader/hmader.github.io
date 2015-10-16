@@ -1,12 +1,42 @@
+$(document).ready(function(){
+    $(this).scrollTop(0);
+});
+
 /*======================================================================
       Arrow Buttons
     ======================================================================*/
+var firstClick = false;
+
+$(window).scroll(function() {
+if ($(window).scrollTop() >= $(".myWrap").height()) {
+//    console.log($(window).scrollTop());
+//    console.log(.5*$(".myWrap").height());
+//    console.log("in");
+  firstClick = true;  
+};
+});
 
 $("img.down-arrow").click(function () {
-    $("html, body").animate({
-        scrollTop: ($(".first").position().top)
-    }, 1000);
-    //console.log($(".first").position().top);
+    
+     $(".down-arrow").css({
+                'position': 'fixed',
+                'left': '50%',
+                'bottom': '45',
+                'transform': 'translate(-50%, 0)'
+            });
+    
+    if (!firstClick) {
+        $("html, body").animate({
+            scrollTop: ($(".first").position().top)
+        }, 1000);
+        //console.log($(".first").position().top);
+        firstClick = true;
+    } else if (firstClick) {
+        console.log($(window).scrollTop());
+     $("html, body").animate({
+            scrollTop: ($(window).scrollTop() + $(".first").height())
+        }, 1000);   
+    }
 });
 
 $("img.left-arrow").click(function () {
@@ -20,8 +50,55 @@ $("img.right-arrow").click(function () {
 });
 
 /*======================================================================
+      Contact clickage
+    ======================================================================*/
+$(".contact-bubble").click( function() {
+    console.log("click");
+   $(".overlay").addClass("show"); 
+});
+
+$(".overlay-content>.button").click( function() {
+    $(".overlay").removeClass("show");
+});
+
+/*======================================================================
       Waypoints
     ======================================================================*/
+
+var arrowOffset = $(".myWrap").height() - .5 * $(".down-arrow").height();
+var footerOffset = $(window).height();
+
+var arrow = new Waypoint({
+    element: $(".down-arrow"),
+    handler: function (direction) {
+        if (direction == 'down') {
+            $(".down-arrow").css({
+                'position': 'fixed',
+                'left': '50%',
+                'bottom': '45',
+                'transform': 'translate(-50%, 0)'
+            });
+        } else {
+            $(".down-arrow").css({
+                'position': 'static',
+                'transform': 'translate(0, 0)'
+            })
+        }
+    },
+    offset: arrowOffset
+});
+
+var hitFooter = new Waypoint({
+    element: $("footer"),
+    handler: function (direction) {
+       $(".down-arrow").css({
+                'position': 'static',
+                'transform': 'translate(0, 0)'
+            });
+        firstClick = false;
+    }, offset: footerOffset
+});
+
 var menubg = new Waypoint({
     element: $(".down-arrow"),
     handler: function (direction) {

@@ -10,10 +10,18 @@ body {
     margin: 0;
 }
 
-h1 {
+h1,
+footer p,
+.overlay-content p {
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
     font-size: 1.5em;
+}
+
+footer p {
+    font-size: 2em;
+    text-align: center;
+    line-height: .85em;
 }
 
 p {
@@ -22,12 +30,33 @@ p {
 }
 
 footer {
- height: 3em;   
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #D70F42;
+    color: #FAFAFA;
+}
+
+.email-button:hover {
+    font-style: italic;
+}
+
+div.cushion {
+    width: 100%;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .down-arrow {
-    padding: 2em 0 1em;
+    padding: 30px 0 15px;
     height: 30px;
+    transform: translate(-50%, 0);
+    z-index: 5;
 }
 
 .myWrap {
@@ -83,7 +112,7 @@ footer {
 }
 
 .descriptors.text {
- padding-top: 1em;   
+    padding-top: 1em;
 }
 
 .descriptors p,
@@ -106,7 +135,7 @@ div img {
 }
 
 nav {
- width: 100%;
+    width: 100%;
     height: 4em;
     display: flex;
     flex-direction: row;
@@ -129,16 +158,58 @@ nav {
     text-decoration: none;
 }
 
-svg {
- width: 35px;
+svg.contact-bubble {
+    width: 35px;
     padding: .5em 2.5em;
     align-self: flex-end;
 }
 
-.contact-button {
- fill: white;   
+.button,
+a {
+    cursor: pointer;
 }
 
-.button {
-    cursor: pointer;
+.overlay {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 15;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, .75);
+    display: none;
+}
+
+.overlay-content {
+    padding: 2em 1.5em 2.5em;
+    width: 50%;
+    height: auto;
+    background-color: #D70F42;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.close-overlay-button {
+    height: 20px;
+    align-self: center;
+}
+
+.close-overlay-button:hover {
+ transform: rotate(-22.5deg); 
+    transition: .25s;
+}
+
+.close-overlay-button path {
+ fill: #FFFFFF;   
+}
+
+.show {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
