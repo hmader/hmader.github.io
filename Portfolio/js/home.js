@@ -1,114 +1,75 @@
-//var mobileScreen = 760;
+var mobileScreen = 760;
+var fade = '.35';
 //var firstClick = false;
 //
-//$(document).ready(function () {
-//    $(this).scrollTop(0);
-//
-//    if ($(window).height() > $(window).width()) {
-//        $(".myWrap").addClass("vertical");
-//        $("div.img").addClass("vertical");
-//    }
-//});
-//
-///*======================================================================
-//      Arrow Buttons
-//    ======================================================================*/
-//
-//$(window).scroll(function () {
-//    if ($(window).scrollTop() >= $(".myWrap").height()) {
-//        //    console.log($(window).scrollTop());
-//        //    console.log(.5*$(".myWrap").height());
-//        //    console.log("in");
-//        if ($(window).width() >= mobileScreen) {
-//            firstClick = true;
-//        }
-//
-//        $(".home-button").css({
-//                'background-color': '#282828',
-//                'transition': '1s'
-//            }),
-//            $(".contact-bubble").css({
-//                'fill': '#282828',
-//                'transition': '1s'
-//            }),
-//            $("circle").css({
-//                'fill': '#FFFFFF',
-//                'transition': '1s'
-//            }),
-//            $("nav").css({
-//                'background-color': 'rgba(255, 255, 255, 1)',
-//                'transition': '1s'
-//            })
-//    } else {
-//        $(".home-button").css({
-//                'background-color': 'transparent',
-//                'transition': '.5s'
-//            }),
-//            $(".contact-bubble").css({
-//                'fill': '#FFFFFF',
-//                'transition': '1s'
-//            }),
-//            $("circle").css({
-//                'fill': '#FFFFFF',
-//                'transition': '1s'
-//            }),
-//            $("nav").css({
-//                'background-color': 'transparent',
-//                'transition': '.5s'
-//            })
-//    }
-//});
-//
-//$("img.down-arrow").click(function () {
-//
-//    if ($(window).width() >= mobileScreen) {
-//        $(".down-arrow").css({
-//            'position': 'fixed',
-//            'left': '50%',
-//            'bottom': '45',
-//            'transform': 'translate(-50%, 0)'
-//        });
-//    }
-//
-//
-//    if (!firstClick) {
-//        $("html, body").animate({
-//            scrollTop: ($(".first").position().top)
-//        }, 1000);
-//        //console.log($(".first").position().top);
-//        if ($(window).width() >= mobileScreen) {
-//            firstClick = true;
-//        }
-//    } else if (firstClick) {
-//        console.log($(window).scrollTop());
-//        $("html, body").animate({
-//            scrollTop: ($(window).scrollTop() + $(".first").height())
-//        }, 1000);
-//    }
-//});
-//
-//$("img.left-arrow").click(function () {
-//    $(".backstretch-div").backstretch("pause");
-//    $(".backstretch-div").backstretch("prev");
-//});
-//
-//$("img.right-arrow").click(function () {
-//    $(".backstretch-div").backstretch("pause");
-//    $(".backstretch-div").backstretch("next");
-//});
-//
-///*======================================================================
-//      Contact clickage
-//    ======================================================================*/
-//$(".contact-bubble").click(function () {
-//    console.log("click");
-//    $(".overlay").addClass("show");
-//});
-//
-//$(".overlay-content>.button").click(function () {
-//    $(".overlay").removeClass("show");
-//});
-//
+$(document).ready(function () {
+
+    $(this).scrollTop(0);
+
+
+    $("a.aProject").each(function () {
+        var myText = $(this).find(".projectText");
+        var imgHeight = $(this).find(".projectImg").height();
+        //    var imgHeight = myImage.height();
+        //    console.log(myText);
+        //    console.log(myImage.height());
+        $(this).css({
+            'height': imgHeight
+        });
+
+        myText.css({
+            'height': imgHeight
+        });
+
+    });
+
+});
+
+$(".dvSection").click(function () {
+
+    $(".dvSection").addClass("selected");
+    $(".pdSection").removeClass("selected");
+    $(".wdSection").removeClass("selected");
+    $(".dataViz>.projectWrap>.projectText").addClass("focused");
+    $(".printDesign>.projectWrap>.projectText").removeClass("focused");
+    $(".webDesign>.projectWrap>.projectText").removeClass("focused");
+
+});
+
+$(".pdSection").click(function () {
+
+    $(".dvSection").removeClass("selected");
+    $(".pdSection").addClass("selected");
+    $(".wdSection").removeClass("selected");
+    $(".dataViz>.projectWrap>.projectText").removeClass("focused");
+    $(".printDesign>.projectWrap>.projectText").addClass("focused");
+    $(".webDesign>.projectWrap>.projectText").removeClass("focused");
+
+});
+
+$(".wdSection").click(function () {
+
+    $(".dvSection").removeClass("selected");
+    $(".pdSection").removeClass("selected");
+    $(".wdSection").addClass("selected");
+    $(".dataViz>.projectWrap>.projectText").removeClass("focused");
+    $(".printDesign>.projectWrap>.projectText").removeClass("focused");
+    $(".webDesign>.projectWrap>.projectText").addClass("focused");
+
+});
+
+/*======================================================================
+      Contact clickage
+    ======================================================================*/
+$(".contact-bubble").click(function () {
+    console.log("click");
+    $(".overlay").addClass("show");
+});
+
+$(".overlay-content>.button").click(function () {
+    $(".overlay").removeClass("show");
+});
+
 ///*======================================================================
 //      Waypoints
 //    ======================================================================*/
