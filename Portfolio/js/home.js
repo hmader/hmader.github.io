@@ -25,6 +25,24 @@ $(document).ready(function () {
 
 });
 
+$( window ).resize(function() {
+    $("a.aProject").each(function () {
+        var myText = $(this).find(".projectText");
+        var imgHeight = $(this).find(".projectImg").height();
+        //    var imgHeight = myImage.height();
+        //    console.log(myText);
+        //    console.log(myImage.height());
+        $(this).css({
+            'height': imgHeight
+        });
+
+        myText.css({
+            'height': imgHeight
+        });
+
+    });
+});
+
 $(".dvSection").click(function () {
 
     $(".dvSection").addClass("selected");

@@ -1,23 +1,20 @@
 body {
     box-sizing: border-box;
-    /*
-    
     display: -webkit-flex;
     -webkit-flex-direction: column;
     -webkit-justify-content: center;
     -webkit-align-items: center;
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-*/
     font-size: 14.5px;
     line-height: 1.5em;
     padding: 0;
     margin: 0;
 }
 
+section,
 div,
 h1,
 h2,
@@ -115,7 +112,8 @@ nav {
     align-self: center;
 }
 
-.mySection:hover, .selected {
+.mySection:hover,
+.selected {
     color: #D70F42;
 }
 
@@ -143,53 +141,23 @@ svg.contact-bubble {
    -------------------------------------------------------------------------- */
 
 section.intro {
-    position: relative;
     width: 100%;
-    height: 80vh;
-    margin: 4em 0 0;
-    display: -webkit-flex;
-    -webkit-align-items: center;
-    display: flex;
-    align-items: center;
+    height: 70vh;
+    color: #D70F42;
+    margin: 4em 0;
+    padding: 2em;
 }
 
-.introWrap {
-    width: 100%;
-    height: 80vh;
-}
-
-.imgWrap {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-.imgWrap img {
-    max-width: 100%;
-    position: absolute;
-}
-
-.introText {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0);
-    margin-top: 4em;
-    width: 60%;
-    text-align: center;
-    z-index: 3;
-    color: rgb(255, 255, 255);
-}
-
-.introText h1 {
-    font-size: 5em;
-    text-transform: uppercase;
-    color: rgb(255, 255, 255);
+section.intro p {
+    font-size: 2em;
+    text-align: left;
+    line-height: .85em;
+    font-weight: 700;
 }
 
 
 /* --------------------------------------------------------------------------
-   sections
+   projects
    -------------------------------------------------------------------------- */
 
 .project-links {
@@ -202,40 +170,14 @@ section.intro {
     justify-content: flex-start;
     align-items: center;
     width: 100%;
+    max-width: 1000px;
     height: 100vh;
-    margin-top: 5em;
+    min-height: 660px;
 }
-
-/*
-ul {
-    margin: 0;
-    padding: 0;
-    display: -webkit-flex;
-    -webkit-flex-flow: column wrap;
-    -webkit-justify-content: flex-start;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
-*/
-
 
 a.aProject {
     list-style: none;
     width: 33.33%;
-/*
-    display: -webkit-flex;
-    -webkit-flex-direction: column;
-    -webkit-justify-content: center;
-    -webkit-align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-*/
     transition: .5s;
 }
 
@@ -249,12 +191,12 @@ img.projectImg {
     max-width: 100%;
     position: absolute;
 }
+
 .projectText {
     position: absolute;
     z-index: 3;
     text-align: center;
     width: 100%;
-
     background-color: rgba(0, 0, 0, 0);
     color: rgba(255, 255, 255, 0);
     transition: .25s;
@@ -268,10 +210,12 @@ img.projectImg {
     align-items: center;
 }
 
-.projectWrap:hover > .projectText, .focused {
+.projectWrap:hover > .projectText,
+.focused {
     background-color: rgba(0, 0, 0, .5);
     color: rgba(255, 255, 255, 1);
 }
+
 
 /* --------------------------------------------------------------------------
    overlay
@@ -293,7 +237,7 @@ img.projectImg {
     width: 40%;
     height: auto;
     background-color: #D70F42;
-    color: #FFFFFF;
+    color: #FAFAFA;
     display: -webkit-flex;
     -webkit-flex-direction: column;
     -webkit-justify-content: center;
@@ -316,7 +260,7 @@ img.projectImg {
 }
 
 .close-overlay-button path {
-    fill: #FFFFFF;
+    fill: #FAFAFA;
 }
 
 .show {
@@ -347,7 +291,6 @@ img.projectImg {
         height: 50vh;
     }
 }
-
 
 /* Intermediate */
 
