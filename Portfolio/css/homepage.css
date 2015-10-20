@@ -308,6 +308,11 @@ img.projectImg {
     .project-links {
      height: auto;
     }
+    
+    .sectionWrapper {
+ display: none;
+}
+
 }
 
 /* Intermediate */
