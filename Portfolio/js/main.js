@@ -114,6 +114,12 @@ $(".overlay-content>.button").click(function () {
     $(".overlay").removeClass("show");
 });
 
+$(".overlay").click(function (event) {
+    if($(event.target).is(".overlay")) {
+        $(".overlay").removeClass("show");
+    }
+});
+
 /*======================================================================
       Waypoints
     ======================================================================*/
