@@ -1,8 +1,44 @@
 var mobileScreen = 760;
 var fade = '.35';
-//var firstClick = false;
+var clicked = "data";
+var galleryWidth = $(window).width() - $('.skills').width();
 //
+
+var divList = $("div.tile");
+console.log("divList", divList);
+
+//function reSort() { 
+//    console.log("in reSort");
+//    divList.sort(function(a, b) {
+//        console.log($(a).data("sort").value - $(b).data("sort").value);
+//       return ($(a).data("sort").value - $(b).data("sort").value);
+//    });
+//    $(".ftg-items").html(divList);
+//}
+//
+//function reOrder() { 
+//    $(".focused").before($(".after"));
+//}
+
 $(document).ready(function () {
+    
+//    $(".dataProj").data("sort", {value: 1});
+//    console.log($(".dataProj").data("sort").value);
+//    $(".dataProj").data("sort", {value: 0});
+//    console.log($(".dataProj").data("sort").value);
+//    console.log($(".posterProj").data("sort").value);
+//console.log("parent 1", $(".dataProj").parent());
+//console.log("parent 2", $(".dataProj").parent().parent());
+    $('#gallery').finalTilesGallery({
+        margin: 10,
+        minTileWidth: 300,
+    });
+    
+    $('.grid').isotope({
+  // options
+  itemSelector: '.grid-item',
+  layoutMode: 'fitRows'
+});
 
     $(this).scrollTop(0);
 
@@ -25,7 +61,7 @@ $(document).ready(function () {
 
 });
 
-$( window ).resize(function() {
+$(window).resize(function () {
     $("a.aProject").each(function () {
         var myText = $(this).find(".projectText");
         var imgHeight = $(this).find(".projectImg").height();
@@ -43,36 +79,65 @@ $( window ).resize(function() {
     });
 });
 
-$(".dvSection").click(function () {
+$(".data").click(function () {
+    if ($(this).hasClass(clicked)) {
+        console.log(this);
+    }
 
-    $(".dvSection").addClass("selected");
-    $(".pdSection").removeClass("selected");
-    $(".wdSection").removeClass("selected");
-    $(".dataViz>.projectWrap>.projectText").addClass("focused");
-    $(".printDesign>.projectWrap>.projectText").removeClass("focused");
-    $(".webDesign>.projectWrap>.projectText").removeClass("focused");
+    $(".data").addClass("selected");
+    $(".visdesign").removeClass("selected");
+    $(".code").removeClass("selected");
+    
+    $(".designProj").removeClass("focused").addClass("after");
+    $(".codeProj").removeClass("focused").addClass("after");
+    $(".dataProj").addClass("focused").removeClass("after");
+    
+    $(".designProj").parent().parent().data("sort", {value: 1});
+    $(".codeProj").parent().parent().data("sort", {value: 1});
+    $(".dataProj").parent().parent().data("sort", {value: 0});
+    
+//    reSort();
+//    reOrder();
+    
+//    console.log("data-sort value", $(".dataProj").parent().parent().data("sort").value);
+//    console.log("parent parent", $(".dataProj").parent().parent());
+//    console.log("data", $(".dataProj").data("sort").value);
 
 });
 
-$(".pdSection").click(function () {
-
-    $(".dvSection").removeClass("selected");
-    $(".pdSection").addClass("selected");
-    $(".wdSection").removeClass("selected");
-    $(".dataViz>.projectWrap>.projectText").removeClass("focused");
-    $(".printDesign>.projectWrap>.projectText").addClass("focused");
-    $(".webDesign>.projectWrap>.projectText").removeClass("focused");
-
+$(".visdesign").click(function () {
+    if ($(this).hasClass(clicked)) {
+        console.log(this);
+    }
+    $(".data").removeClass("selected");
+    $(".visdesign").addClass("selected");
+    $(".code").removeClass("selected");
+    
+    $(".dataProj").removeClass("focused").addClass("after");
+    $(".codeProj").removeClass("focused").addClass("after");
+    $(".designProj").addClass("focused").removeClass("after");
+    
+    $(".dataProj").parent().parent().data("sort", {value: 1});
+    $(".codeProj").parent().parent().data("sort", {value: 1});
+    $(".designProj").parent().parent().data("sort", {value: 0});
+    
 });
 
-$(".wdSection").click(function () {
-
-    $(".dvSection").removeClass("selected");
-    $(".pdSection").removeClass("selected");
-    $(".wdSection").addClass("selected");
-    $(".dataViz>.projectWrap>.projectText").removeClass("focused");
-    $(".printDesign>.projectWrap>.projectText").removeClass("focused");
-    $(".webDesign>.projectWrap>.projectText").addClass("focused");
+$(".code").click(function () {
+    if ($(this).hasClass(clicked)) {
+        console.log(this);
+    }
+    $(".data").removeClass("selected");
+    $(".visdesign").removeClass("selected");
+    $(".code").addClass("selected");
+    
+    $(".dataProj").removeClass("focused").addClass("after");
+    $(".designProj").removeClass("focused").addClass("after");
+    $(".codeProj").addClass("focused").removeClass("after");
+    
+    $(".dataProj").parent().parent().data("sort", {value: 1});
+    $(".designProj").parent().parent().data("sort", {value: 1});
+    $(".codeProj").parent().parent().data("sort", {value: 0});
 
 });
 
@@ -86,6 +151,12 @@ $(".contact-bubble").click(function () {
 
 $(".overlay-content>.button").click(function () {
     $(".overlay").removeClass("show");
+});
+
+$(".overlay").click(function (event) {
+    if($(event.target).is(".overlay")) {
+        $(".overlay").removeClass("show");
+    }
 });
 
 ///*======================================================================

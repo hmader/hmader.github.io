@@ -97,6 +97,11 @@ $("img.right-arrow").click(function () {
     $(".backstretch-div").backstretch("next");
 });
 
+$(".backstretch-div").click(function () {
+    $(".backstretch-div").backstretch("pause");
+    $(".backstretch-div").backstretch("next");
+});
+
 /*======================================================================
       Contact clickage
     ======================================================================*/
